@@ -10,20 +10,40 @@ const bookSubmit = document.querySelector(".add-book")
 
 // Book Constructor and Prototype Function
 
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
+
+
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read; 
+    }
+
+    info() {
+        return `${this.title} by ${this.author}, ${this.pages} pages, ${!this.read ? "not yet read": "read"}.`;
+    }
+
+    toggleRead() {
+        this.read = !this.read;
+    }
+
 }
 
-Book.prototype.info = function() {
-    return `${this.title} by ${this.author}, ${this.pages} pages, ${!this.read ? "not yet read": "read"}.`
-}
+// function Book(title, author, pages, read) {
+//     this.title = title;
+//     this.author = author;
+//     this.pages = pages;
+//     this.read = read;
+// }
 
-Book.prototype.toggleRead = function() {
-    this.read = !this.read;
-}
+// Book.prototype.info = function() {
+//     return `${this.title} by ${this.author}, ${this.pages} pages, ${!this.read ? "not yet read": "read"}.`
+// }
+
+// Book.prototype.toggleRead = function() {
+//     this.read = !this.read;
+// }
 
 
 // Event Handler Functions
